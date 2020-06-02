@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [];
@@ -8,4 +9,18 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+  constructor(private router: Router) {
+    this.SetupDefaultRoutes();
+  }
+
+  private SetupDefaultRoutes(): void {
+    this.router.config.unshift(
+      {
+        path: '**', component: HomeComponent
+      }
+    )
+  }
+}
+

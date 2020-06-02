@@ -1,0 +1,21 @@
+.puzzleImage {
+    background-image: url('src/assets/images/digi.png');
+    height          : 500px;
+    width           : 500px;
+
+    .row {
+        height: 25%;
+        margin: 0;
+
+        .puzzlePieces {
+            background-image: url('src/assets/images/digi.png');
+            border: 1px solid grey;
+            cursor: pointer;
+        }
+        .noBackground{
+            background-image: none;
+            background-color: rgba(80, 80, 80, 0.79);
+            cursor: initial;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="puzzleImage">
+    <ng-container *ngIf='!gameFinished'>
+        <div class="row" *ngFor='let row of blocks; index as i;'>
+            <ng-container *ngFor='let item of row; index as j;'>
+                <div class="col-3 puzzlePieces" [ngClass]="{'noBackground':item == -1}"
+                    [ngStyle]="{ 'background-position-x.px': getOriginalX(item), 'background-position-y.px': getOriginalY(item)}"
+                    (click)='move(i, j)'>
+                    <span *ngIf='item != -1'>{{item}}</span>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>
+
+
+<button style="margin: 20px;" (click)='shuffle()'>Shuffle</button>
